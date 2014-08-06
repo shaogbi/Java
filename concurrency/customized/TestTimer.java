@@ -24,7 +24,7 @@ public class TestTimer {
     TimerTask timerTask = new MyTimerTask();
     // running timer task as daemon thread
     Timer timer = new Timer(true);
-    timer.scheduleAtFixedRate(timerTask, 0, 4*1000);
+    timer.scheduleAtFixedRate(timerTask, 0, 4000);
     System.out.println("TimerTask started.");
     TimeUnit.SECONDS.sleep(10);
     timer.cancel(); // it immediately stops
@@ -36,7 +36,7 @@ public class TestTimer {
 suppose TimerTask's running time is t seconds,
 if period less than t, it starts every t seconds,
 else it starts every period seconds.
-when "timer.scheduleAtFixedRate(timerTask, 0, 2*1000);"
+when "timer.scheduleAtFixedRate(timerTask, 0, 2000);"
 output:
 TimerTask started.
 Timer task started at: Mon May 12 23:15:11 CST 2014.
@@ -47,7 +47,7 @@ Timer task started at: Mon May 12 23:15:17 CST 2014.
 Timer task finished at: Mon May 12 23:15:20 CST 2014.
 Timer task started at: Mon May 12 23:15:20 CST 2014.
 TimerTask cancelled.
-when "timer.scheduleAtFixedRate(timerTask, 0, 4*1000);"
+when "timer.scheduleAtFixedRate(timerTask, 0, 4000);"
 output:
 TimerTask started.
 Timer task started at: Mon May 12 23:16:01 CST 2014.
