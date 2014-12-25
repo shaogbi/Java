@@ -41,6 +41,8 @@ public class NIOServer {
           channel.register(this.selector, SelectionKey.OP_READ);
         } else if(key.isReadable()) {
           read(key);
+        } else if(key.isConnectable()) {
+          System.out.printf("%s is connectable.\n", key);
         }
       }
       TimeUnit.SECONDS.sleep(2);

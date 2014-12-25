@@ -28,7 +28,6 @@ class RunnableTask implements Runnable {
 
 public class TestScheduledThreadPoolExecutor {
   public static void main(String[] args) {
-    
     ScheduledThreadPoolExecutor executor = (ScheduledThreadPoolExecutor)Executors.newScheduledThreadPool(1);
     System.out.printf("Main: Starting at: %s.\n", new Date());
     for(int i=0;i<5;i++) {
@@ -42,7 +41,6 @@ public class TestScheduledThreadPoolExecutor {
       e.printStackTrace();
     }
     System.out.printf("Main: Ends at: %s.\n", new Date());
-    
     executor = (ScheduledThreadPoolExecutor)Executors.newScheduledThreadPool(1);
     RunnableTask task = new RunnableTask("Task");
     ScheduledFuture<?> result = executor.scheduleAtFixedRate(task, 1, 2, TimeUnit.SECONDS);

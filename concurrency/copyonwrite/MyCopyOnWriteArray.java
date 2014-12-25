@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.concurrent.locks.*;
 
 public class MyCopyOnWriteArray {
-  private Object[] objs;
+  private volatile Object[] objs;
   transient final ReentrantLock lock = new ReentrantLock();
   public MyCopyOnWriteArray() {
     objs = new Object[0];

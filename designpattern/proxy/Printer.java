@@ -5,7 +5,7 @@ public class Printer implements IPrinter {
     try {
       System.out.println("Printer initialing...");
       Thread.sleep(3000);
-    } catch (Exception e) {}
+    } catch(Exception e) {}
   }
   @Override
   public void printMessage(String message) {

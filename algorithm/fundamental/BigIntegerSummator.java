@@ -1,6 +1,6 @@
 package algorithm.fundamental;
 
-/* recommend use "java.math.BigInteger"
+/* import java.math.BigInteger;
 BigInteger x = new BigInteger("11");
 BigInteger y = new BigInteger("10");
 long l = x.longValue();
@@ -43,8 +43,11 @@ public class BigIntegerSummator {
     return (new StringBuffer(String.valueOf(c))).reverse().toString().trim();
   }
   public static void main(String[] args) {
+    System.out.println(BigIntegerSummator.sum("3", "5"));
     System.out.println(BigIntegerSummator.sum("13", "25"));
     System.out.println(BigIntegerSummator.sum("93", "25"));
+    System.out.println(BigIntegerSummator.sum("93", "5"));
     System.out.println(BigIntegerSummator.sum("93", "8"));
+    System.out.println(BigIntegerSummator.sum("8", "97"));
   }
 }

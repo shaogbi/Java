@@ -2,6 +2,9 @@ package designpattern.memento;
 
 public class Life {
   public static class Memento {
+    {
+      System.out.println("ok");
+    }
     private final String time;
     public Memento(String timeToSave) {
       time = timeToSave;

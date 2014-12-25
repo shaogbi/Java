@@ -2,7 +2,7 @@ package others.cache;
 
 import java.util.*;
 
-// basic thread safe cache, use synchronized, low performance
+// use synchronized, low performance
 public class ThreadSafeCache1 {
   private Map<String, CacheObject> cache = null;
   public ThreadSafeCache1() {

@@ -39,6 +39,6 @@ public class TestThreadPoolExecutor {
       System.out.printf("Server: Task Count: %d.\n", executor.getTaskCount());
     }
     executor.shutdown();
-    System.out.println("execute shut down...");   
+    System.out.println("execute shut down...");
   }
 }

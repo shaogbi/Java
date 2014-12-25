@@ -16,7 +16,6 @@ class MyBlockingQueue {
     while(this.queue.size() == this.limit) {
       wait();
     }
-    
     this.queue.add(item);
     System.out.println(item + " added");
   }
@@ -28,7 +27,6 @@ class MyBlockingQueue {
     while(this.queue.size() == 0) {
       wait();
     }
-    
     return this.queue.remove(0);
   }
 }
@@ -42,7 +40,7 @@ public class TestMyBlockingQueue {
     System.out.println(myBlockingQueue.dequeue());
     System.out.println(myBlockingQueue.dequeue());
     System.out.println(myBlockingQueue.dequeue());
-    System.out.println(myBlockingQueue.dequeue());
     myBlockingQueue.enqueue(new Object());
+    System.out.println(myBlockingQueue.dequeue());
   }
 }

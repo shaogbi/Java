@@ -1,6 +1,6 @@
 package nio.selector;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.*;
 import java.nio.*;
 import java.nio.channels.*;
@@ -12,12 +12,11 @@ public class NIOClient {
     SocketChannel channel = SocketChannel.open();
     channel.configureBlocking(false);
     this.selector = Selector.open();
-    // 用channel.finishConnect();才能完成连接
     channel.connect(new InetSocketAddress(ip, port));
     channel.register(selector, SelectionKey.OP_CONNECT);
   }
   private void read(SelectionKey key) throws Exception {
-    SocketChannel channel = (SocketChannel) key.channel();
+    SocketChannel channel = (SocketChannel)key.channel();
     ByteBuffer buffer = ByteBuffer.allocate(100);
     channel.read(buffer);
     byte[] data = buffer.array();
@@ -30,12 +29,12 @@ public class NIOClient {
     while (true) {
       selector.select();
       Iterator<?> ite = this.selector.selectedKeys().iterator();
-      while (ite.hasNext()) {
+      while(ite.hasNext()) {
         SelectionKey key = (SelectionKey)ite.next();
         ite.remove();
         if(key.isConnectable()) {
           SocketChannel channel = (SocketChannel)key.channel();
-          if (channel.isConnectionPending()) {
+          if(channel.isConnectionPending()) {
             channel.finishConnect();
           }
           channel.configureBlocking(false);

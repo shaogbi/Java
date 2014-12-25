@@ -21,7 +21,7 @@ public class ThreadSafeCache2 {
   }
   public void remove(String key) {
     cache.remove(key);
-  } 
+  }
   public CacheObject get(String key) throws InterruptedException, ExecutionException {
     FutureTask<CacheObject> ft = cache.get(key);
     if(ft != null) {

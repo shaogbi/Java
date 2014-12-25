@@ -11,7 +11,7 @@ public class MySingleton {
       instance = new MySingleton();
     }
     return instance;
-  } 
+  }
 }
 */
 
@@ -24,5 +24,5 @@ public class MySingleton {
   }
   public static MySingleton getInstance() {
     return MySingletonHolder.instance;
-  } 
+  }
 }
