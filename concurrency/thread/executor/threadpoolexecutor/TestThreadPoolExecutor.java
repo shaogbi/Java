@@ -28,7 +28,7 @@ class Task implements Runnable {
 public class TestThreadPoolExecutor {
   public static void main(String[] args) {
     ThreadPoolExecutor executor = (ThreadPoolExecutor)Executors.newCachedThreadPool();
-    //ThreadPoolExecutor executor = (ThreadPoolExecutor)Executors.newFixedThreadPool(10);
+    // ThreadPoolExecutor executor = (ThreadPoolExecutor)Executors.newFixedThreadPool(10);
     for(int i=0;i<100;i++) {
       Task task = new Task("Task-" + i);
       System.out.printf("Server: A new task has arrived.\n");
@@ -38,7 +38,7 @@ public class TestThreadPoolExecutor {
       System.out.printf("Server: Completed Tasks: %d.\n", executor.getCompletedTaskCount());
       System.out.printf("Server: Task Count: %d.\n", executor.getTaskCount());
     }
-    executor.shutdown();
+    executor.shutdown(); // if no executor.shutdown(), program never stops
     System.out.println("execute shut down...");
   }
 }
