@@ -14,6 +14,7 @@ class QueueProducer implements Runnable {
     try {
       queue.put(event1);
       System.out.printf("[%s] Published event: %s %n", Thread.currentThread().getName(), event1);
+      // thread will block here because consumer no more consume
       queue.put(event2);
       System.out.printf("[%s] Published event: %s %n", Thread.currentThread().getName(), event2);
     } catch (InterruptedException e) {
@@ -31,7 +32,6 @@ class QueueConsumer implements Runnable {
   public void run() {
     try {
       String event = queue.take();
-      // thread will block here
       System.out.printf("[%s] Consumed event: %s %n", Thread.currentThread().getName(), event);
     } catch (InterruptedException e) {
       e.printStackTrace();
