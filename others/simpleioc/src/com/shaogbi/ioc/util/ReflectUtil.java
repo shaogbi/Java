@@ -12,7 +12,7 @@ public class ReflectUtil {
         return obj;
     }
     
-    public static Object newInstance(Class<?> clazz){
+    public static Object newInstance(Class<?> clazz) {
         try {
             return clazz.newInstance();
         } catch(Exception e) {
